@@ -13,7 +13,7 @@ use Illuminate\Support\Collection;
 class CourseService{
 
     public function __construct(
-        private readonly CourseRepositoryInterface $courseRepo
+        private CourseRepositoryInterface $courseRepo
     ){
     }
 

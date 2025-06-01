@@ -1,24 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Providers;
 
+use App\Repositories\Contracts\CourseRepositoryInterface;
+use App\Repositories\CourseRepository;
 use Illuminate\Support\ServiceProvider;
 
-class AppServiceProvider extends ServiceProvider
-{
-    /**
-     * Register any application services.
-     */
-    public function register(): void
-    {
-        //
-    }
+class AppServiceProvider extends ServiceProvider{
 
-    /**
-     * Bootstrap any application services.
-     */
-    public function boot(): void
-    {
-        //
+    public function register() : void{
+        $this->app->bind(
+            CourseRepositoryInterface::class,
+            CourseRepository::class
+        );
     }
 }
